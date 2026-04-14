@@ -46,6 +46,10 @@ Screen height: {SCREEN_HEIGHT}""")
                 log_event("player_hit")
                 print("Game over!")
                 sys.exit()
+            for shot in shots:
+                if i.collides_with(shot):
+                    log_event("asteroid_shot")
+                    i.kill()
         for i in drawable:
             i.draw(screen)
         pygame.display.flip()
